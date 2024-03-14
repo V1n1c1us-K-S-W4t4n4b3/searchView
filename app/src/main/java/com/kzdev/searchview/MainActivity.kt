@@ -18,12 +18,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        itensList()
+        itemsList()
         programingAdapterList()
         searchBarConfig()
     }
-    
-    private fun itensList() {
+
+    private fun itemsList() {
         programmingList = ArrayList()
         programmingList.add("Filtro limpo SA")
         programmingList.add("Extintores e Cia")
@@ -53,7 +53,6 @@ class MainActivity : AppCompatActivity() {
             override fun onQueryTextSubmit(query: String?): Boolean {
 
                 if (programmingList.contains(query)) {
-
                     adapter.filter.filter(query)
                 } else {
                     Toast.makeText(this@MainActivity, "Sem Fornecedor...", Toast.LENGTH_LONG)
